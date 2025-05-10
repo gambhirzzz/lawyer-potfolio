@@ -16,6 +16,10 @@ const LawyerPortfolio: React.FC = () => {
   const servicesRef = useRef<HTMLDivElement | null>(null);
   const testimonialsRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
+  const blogRef = useRef<HTMLDivElement | null>(null);
+  const caseStudiestRef = useRef<HTMLDivElement | null>(null);
+  const FaqRef = useRef<HTMLDivElement | null>(null);
+
 
   const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
     if (ref.current) {
@@ -77,7 +81,16 @@ const LawyerPortfolio: React.FC = () => {
             <Menu.Item key="4" onClick={() => scrollToSection(testimonialsRef)}>
               Testimonials
             </Menu.Item>
-            <Menu.Item key="5" onClick={() => scrollToSection(contactRef)}>
+            <Menu.Item key="5" onClick={() => scrollToSection(caseStudiestRef)}>
+              Legal Insights
+            </Menu.Item>
+            <Menu.Item key="6" onClick={() => scrollToSection(blogRef)}>
+              Blog Section
+            </Menu.Item>
+            <Menu.Item key="7" onClick={() => scrollToSection(FaqRef)}>
+              FAQ
+            </Menu.Item>
+            <Menu.Item key="8" onClick={() => scrollToSection(contactRef)}>
               Contact
             </Menu.Item>
           </Menu>
@@ -175,9 +188,9 @@ const LawyerPortfolio: React.FC = () => {
               </Col>
             </Row>
 
-            <CaseStudiesSection />
-            <BlogSection />
-            <FAQSection />
+            <CaseStudiesSection ref={caseStudiestRef} />
+            <BlogSection ref={blogRef} />
+            <FAQSection ref={FaqRef} />
 
             <Row ref={contactRef}>
               <Col md={12} sm={24}>

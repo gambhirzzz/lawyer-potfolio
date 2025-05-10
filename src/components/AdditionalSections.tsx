@@ -1,10 +1,10 @@
-import React from "react";
+import { forwardRef } from "react";
 import { Row, Col, Typography, Card } from "antd";
 
 const { Title, Paragraph } = Typography;
 
-export const CaseStudiesSection: React.FC = () => (
-  <section style={{ marginBottom: 50 }}>
+export const CaseStudiesSection = forwardRef<HTMLDivElement>((_props, ref) => (
+  <section ref={ref} style={{ marginBottom: 50 }}>
     <Title level={2}>Case Studies</Title>
     <Row gutter={[16, 16]}>
       <Col md={8} sm={24}>
@@ -30,32 +30,34 @@ export const CaseStudiesSection: React.FC = () => (
       </Col>
     </Row>
   </section>
-);
+));
 
-export const BlogSection: React.FC = () => (
-  <section style={{ marginBottom: 50 }}>
-    <Title level={2}>Legal Insights</Title>
-    <Row gutter={[16, 16]}>
-      <Col md={12} sm={24}>
-        <Card title="Understanding Civil Litigation">
-          <Paragraph>
-            A guide to navigating civil court processes and key points to know before filing a suit.
-          </Paragraph>
-        </Card>
-      </Col>
-      <Col md={12} sm={24}>
-        <Card title="Preventing Contract Disputes">
-          <Paragraph>
-            How to draft clear contracts that minimize the risk of future legal complications.
-          </Paragraph>
-        </Card>
-      </Col>
-    </Row>
-  </section>
-);
+export const BlogSection = forwardRef<HTMLDivElement>((_props, ref) => {
+  return (
+    <section ref={ref} style={{ marginBottom: 50 }}>
+      <Title level={2}>Legal Insights</Title>
+      <Row gutter={[16, 16]}>
+        <Col md={12} sm={24}>
+          <Card title="Understanding Civil Litigation">
+            <Paragraph>
+              A guide to navigating civil court processes and key points to know before filing a suit.
+            </Paragraph>
+          </Card>
+        </Col>
+        <Col md={12} sm={24}>
+          <Card title="Preventing Contract Disputes">
+            <Paragraph>
+              How to draft clear contracts that minimize the risk of future legal complications.
+            </Paragraph>
+          </Card>
+        </Col>
+      </Row>
+    </section>
+  );
+});
 
-export const FAQSection: React.FC = () => (
-  <section style={{ marginBottom: 50 }}>
+export const FAQSection = forwardRef<HTMLDivElement>((_props, ref) => (
+  <section ref={ref} style={{ marginBottom: 50 }}>
     <Title level={2}>Frequently Asked Questions</Title>
     <Row gutter={[16, 16]}>
       <Col span={24}>
@@ -76,4 +78,4 @@ export const FAQSection: React.FC = () => (
       </Col>
     </Row>
   </section>
-);
+));
